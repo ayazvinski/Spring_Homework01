@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class MemoryCustomerRepository implements CustomerRepository {
+    List<Customer> customerList = new ArrayList<>();
     private final CustomerLogger logger;
 
     public MemoryCustomerRepository(CustomerLogger logger) {
@@ -18,9 +19,6 @@ public class MemoryCustomerRepository implements CustomerRepository {
     public CustomerLogger getLogger() {
         return logger;
     }
-
-    List<Customer> customerList = new ArrayList<>();
-
 
     @Override
     public void add(Customer customer) {
